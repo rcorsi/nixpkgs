@@ -29,17 +29,18 @@
   unstableGitUpdater,
   libtommath,
   sdl3,
+  icu78,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "ladybird";
-  version = "0-unstable-2025-12-03";
+  version = "0-unstable-top-of-master-rcorsi";
 
   src = fetchFromGitHub {
     owner = "LadybirdBrowser";
     repo = "ladybird";
-    rev = "9b4d9966da96b7f6421b59eb0adfe90d484ee920";
-    hash = "sha256-dqTxW1ENc3k9pk8z2BFPsVJVren9ZkFovKKhNAcs1eo=";
+    rev = "e6521d8ead03a685ee7d7ae3fb614021abe7d5b2";
+    hash = "sha256-5u8lnPrVVFYBYrDYeUdQ62VRTtdWaBT7CVJUpNDU+ls=";
   };
 
   postPatch = ''
@@ -76,6 +77,7 @@ stdenv.mkDerivation (finalAttrs: {
     python3
     qt6Packages.wrapQtAppsHook
     libtommath
+    icu78
   ];
 
   buildInputs = [
